@@ -9,6 +9,7 @@
       </div>
     </div>
 
+  <van-search :value="value" show-action @search="onSearch" @cancel="onCancel" placeholder="请输入搜索关键词" />
   </div>
 </template>
 
@@ -18,7 +19,7 @@ import card from '@/components/card'
 export default {
   data () {
     return {
-      motto: 'Hello miniprograme',
+      value: '',
       userInfo: {
         nickName: 'mpvue',
         avatarUrl: 'http://mpvue.com/assets/logo.png'
@@ -32,13 +33,21 @@ export default {
 
   methods: {
     bindViewTap () {
-      const url = '../account/main'
-      if (mpvuePlatform === 'wx') {
-        mpvue.switchTab({ url })
-      }
-
-      console.log(url);
+      const url = '../counter/main'
+      // if (mpvuePlatform === 'wx') {
+        console.log("jump -->222 " + url);
+        // wx.navigateTo({ url: '../account/main' })
+        mpvue.navigateTo({url});
+        // mpvue.reLaunch({ "url": url }); //可以
+      // }
     },
+    onSearch: function(val){
+      console.log(val);
+      console.info(this.value);
+    },
+    onCancel() {
+      console.log("cancel");
+    }
   },
 
   created () {

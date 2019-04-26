@@ -18,10 +18,10 @@ export default{
       navigationBarTextStyle: 'black',
     },
     tabBar: {
-      // "color": "#999",
-      // "backgroundColor": "#fafafa",
-      // "selectedColor": "#333",
-      // "borderStyle": "white",
+      "color": "#999",
+      "backgroundColor": "#fafafa",
+      "selectedColor": "#333",
+      "borderStyle": "white",
   
       list: [{
         text: '自选',
@@ -44,7 +44,10 @@ export default{
         iconPath: 'static/tabs/yh.png',
         selectedIconPath: 'static/tabs/yh_1.png',
       }],
-      position: 'bottom'
+      position: 'bottom',
+    },
+    usingComponents: {
+      "van-notify": "path/to/vant-weapp/dist/notify/index"
     }
   }  
 }
